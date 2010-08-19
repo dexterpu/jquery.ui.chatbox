@@ -3,6 +3,8 @@
  * Dual licensed under the MIT or GPL Version 2 licenses.
  * http://jquery.org/license
  *
+ * Check out http://www.cs.illinois.edu/homes/wenpu1/chatbox.html for document
+ *
  * Depends on jquery.ui.core, jquery.ui.widiget, jquery.ui.effect
  * 
  * Also uses some styles for jquery.ui.dialog
@@ -15,15 +17,16 @@
     $.widget("ui.chatbox", {
 	options: {
 	    id: null, //id for the DOM element
+	    title: null, // title of the chatbox
 	    user: null, // can be anything associated with this chatbox
 	    hidden: false,
 	    offset: 0, // relative to right edge of the browser window
-	    width: 230,
+	    width: 230, // width of the chatbox
 	    messageSent: function(id, user, msg){
 		// override this
 		this.boxManager.addMsg(user.first_name, msg);
 	    },
-	    boxClosed: function(id) {},
+	    boxClosed: function(id) {}, // called when the close icon is clicked
 	    boxManager: {
 		// thanks to the widget factory facility
 		// similar to http://alexsexton.com/?p=51
@@ -36,7 +39,6 @@
 		    var e = document.createElement('div');
 		    $(e).html("<b>" + peer +":</b> " + msg)
 			.addClass("ui-chatbox-msg");
-			//.appendTo(box);
 		    box.append(e);
 		    self._scrollToBottom();
 
@@ -173,7 +175,7 @@
 			 'ui-chatbox-input'
 			 )
 		.click(function(event) {
-		    // toggle chat box
+		    // anything?
 		})
 		.appendTo(uiChatboxContent),
 	    uiChatboxInputBox = (self.uiChatboxInputBox = $('<textarea></textarea>'))
