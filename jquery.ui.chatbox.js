@@ -62,7 +62,7 @@
 		_scrollToBottom: function() {
 		    var box = this.elem.uiChatboxLog;
 		    box.scrollTop(box.get(0).scrollHeight);
-		},
+		}
 	    }
 	},
 
