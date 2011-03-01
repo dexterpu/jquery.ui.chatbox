@@ -36,7 +36,7 @@
 .ui-chatbox-input-box {
     margin: 5px 5px 5px 5px;
     border: 2px solid lightgrey;/* #6699FF */
-    padding:5px 5px 5px 5px;
+    /* padding:5px 5px 5px 5px; */
     height: 35px;
 }
 
