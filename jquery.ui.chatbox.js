@@ -37,9 +37,16 @@
 		    var self = this;
 		    var box = self.elem.uiChatboxLog;
 		    var e = document.createElement('div');
-		    $(e).html("<b>" + peer +":</b> " + msg)
-			.addClass("ui-chatbox-msg");
 		    box.append(e);
+		    $(e).hide();
+		    var peerName = document.createElement("b");
+		    $(peerName).text(peer + ": ");
+		    e.appendChild(peerName);
+		    var msgElement = document.createElement("span");
+		    $(msgElement).text(msg);
+		    e.appendChild(msgElement);
+			$(e).addClass("ui-chatbox-msg");
+			$(e).fadeIn();
 		    self._scrollToBottom();
 
 		    if(!self.elem.uiChatboxTitlebar.hasClass("ui-state-focus") && !self.highlightLock) {
