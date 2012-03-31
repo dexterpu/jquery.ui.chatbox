@@ -39,10 +39,18 @@
 		    var e = document.createElement('div');
 		    box.append(e);
 		    $(e).hide();
-		    var peerName = document.createElement("b");
-		    $(peerName).text(peer + ": ");
-		    e.appendChild(peerName);
-		    var msgElement = document.createElement("span");
+		    
+		    var systemMessage = false;
+		    
+		    if (peer) {
+    		    var peerName = document.createElement("b");
+    		    $(peerName).text(peer + ": ");
+    		    e.appendChild(peerName);
+		    } else {
+		        systemMessage = true;
+		    }
+		    
+		    var msgElement = document.createElement(systemMessage ? "i" : "span");
 		    $(msgElement).text(msg);
 		    e.appendChild(msgElement);
 			$(e).addClass("ui-chatbox-msg");
