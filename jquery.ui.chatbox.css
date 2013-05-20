@@ -52,6 +52,7 @@
 }
 
 .ui-chatbox-msg {
+    margin-top: 10px;
     max-width: 296px;
     float: left;
     clear: both;
