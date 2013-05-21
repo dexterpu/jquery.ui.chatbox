@@ -4,7 +4,6 @@
     bottom:0;
     padding: 2px;
     background:  #CCCCCC;
-    /* background:  #CCCCCC; */
 }
 
 .ui-chatbox-titlebar {
@@ -22,7 +21,6 @@
 .ui-chatbox-log {
     padding: 3px;
     height: 250px;
-    max-width: 300px;
     overflow-y: auto;
     overflow-x: hidden;
     background: #FFFFFF;
@@ -32,15 +30,13 @@
     padding: 3px;
     border-top: 1px solid grey;
     overflow: hidden;
-    /* background: #FFFFFF; */
 }
 
 .ui-chatbox-input-box {
     margin: 5px;
     border: 2px solid lightgrey;/* #6699FF */
-    /* padding:5px 5px 5px 5px; */
+    padding: 2px;
     height: 50px;
-    width: 266px;
 }
 
 .ui-chatbox-icon {
@@ -53,7 +49,6 @@
 
 .ui-chatbox-msg {
     margin-top: 10px;
-    max-width: 296px;
     float: left;
     clear: both;
     /* Source: http://snipplr.com/view/10979/css-cross-browser-word-wrap */

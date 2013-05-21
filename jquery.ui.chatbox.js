@@ -21,7 +21,7 @@
             user: null, // can be anything associated with this chatbox
             hidden: false,
             offset: 0, // relative to right edge of the browser window
-            width: 250, // width of the chatbox
+            width: 300, // width of the chatbox
             messageSent: function(id, user, msg) {
                 // override this
                 this.boxManager.addMsg(user.first_name, msg);
@@ -56,6 +56,7 @@
                     $(msgElement).text(msg);
                     e.appendChild(msgElement);
                     $(e).addClass("ui-chatbox-msg");
+                    $(e).css("maxWidth", $(box).width());
                     $(e).fadeIn();
                     self._scrollToBottom();
 
@@ -213,7 +214,7 @@
                 self.uiChatboxInputBox.focus();
             });
 
-            //self._setWidth(self.options.width);
+            self._setWidth(self.options.width);
             self._position(self.options.offset);
 
             self.options.boxManager.init(self);
@@ -244,8 +245,9 @@
         _setWidth: function(width) {
             this.uiChatboxTitlebar.width(width + "px");
             this.uiChatboxLog.width(width + "px");
-            // this is a hack, but i can live with it so far
-            this.uiChatboxInputBox.css("width", (width - 14) + "px");
+            this.uiChatboxInput.css("maxWidth", width + "px");
+            // padding:2, boarder:2, margin:5
+            this.uiChatboxInputBox.css("width", (width - 18) + "px");
         },
         _position: function(offset) {
             this.uiChatbox.css("right", offset);
